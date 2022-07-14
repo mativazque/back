@@ -10,6 +10,10 @@ const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en puerto ${PORT}`)
 })
 
+app.get("/", async (req, res) => {
+    res.send("<h1>Server de Matias Vazquez</h1>")
+})
+
 app.get("/productos", async (req, res) => {
     productos.getAll()
         .then((data) => res.send(data))
